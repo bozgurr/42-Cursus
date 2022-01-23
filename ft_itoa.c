@@ -1,17 +1,64 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bozgur <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/23 23:59:35 by bozgur            #+#    #+#             */
+/*   Updated: 2022/01/24 02:01:28 by bozgur           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
+void	ft_swap(char *s, char *n)
+{
+	char	swap;
+
+	swap = *s;
+	*s = *n;
+	*n = swap;
+}
+
+void	ft_reverse(char *s)
+{
+	int		len;
+	int		index;
+	int		count;
+
+	index = *s == '-';
+	len = ft_strlen(s);
+	count = len / 2;
+	while (count--)
+		ft_swap(s + index++, s + --len);
+}
 
 char	*ft_itoa(int n)
 {
-	char	*res;
-	int		count;
+	char	*result;
+	int		index;
+	int		sign;
 
-	count = 0;
-	while ((unsigned int)n / 10)
-		count++;
-	if	(n <= 0 && n >= -2147483648)
+	index = 0;
+	sign = 1 - (n < 0) * 2;
+	if (!n)
+		return (ft_strdup("0"));
+	result = (char *)malloc((11) * sizeof(char));
+	*result = (sign < 0 && !index++) * '-';
+	while (n)
 	{
-		n = n * - 1; 
-		res = "-";
-	}	
-	
+		result[index++] = n % 10 * sign + '0';
+		n /= 10;
+	}
+	result[index] = 0;
+	ft_reverse(result);
+	return (result);
 }
+/*
+#include <stdio.h>
+int	main()
+{
+	printf("%s - %i",ft_itoa(-21474832), -21474832);
+}
+*/
