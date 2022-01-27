@@ -6,7 +6,7 @@
 /*   By: bozgur <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 08:23:33 by bozgur            #+#    #+#             */
-/*   Updated: 2022/01/24 08:23:37 by bozgur           ###   ########.fr       */
+/*   Updated: 2022/01/27 12:01:51 by bozgur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	while (*s)
 		write(fd, s++, 1);
 	write(fd, "\n", 1);

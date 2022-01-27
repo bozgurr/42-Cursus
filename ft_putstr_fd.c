@@ -6,7 +6,7 @@
 /*   By: bozgur <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 07:12:00 by bozgur            #+#    #+#             */
-/*   Updated: 2022/01/24 07:12:04 by bozgur           ###   ########.fr       */
+/*   Updated: 2022/01/27 12:01:33 by bozgur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	index;
 
 	index = 0;
+	if (!s)
+		return ;
 	while (s[index])
 		write(fd, &s[index++], 1);
 }

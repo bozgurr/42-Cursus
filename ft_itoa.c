@@ -6,7 +6,7 @@
 /*   By: bozgur <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:59:35 by bozgur            #+#    #+#             */
-/*   Updated: 2022/01/24 02:01:28 by bozgur           ###   ########.fr       */
+/*   Updated: 2022/01/27 15:03:00 by bozgur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ char	*ft_itoa(int n)
 	if (!n)
 		return (ft_strdup("0"));
 	result = (char *)malloc((11) * sizeof(char));
+	if (!result)
+		return (0);
 	*result = (sign < 0 && !index++) * '-';
 	while (n)
 	{
@@ -55,10 +57,3 @@ char	*ft_itoa(int n)
 	ft_reverse(result);
 	return (result);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	printf("%s - %i",ft_itoa(-21474832), -21474832);
-}
-*/

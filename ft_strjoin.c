@@ -6,7 +6,7 @@
 /*   By: bozgur <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 04:09:11 by bozgur            #+#    #+#             */
-/*   Updated: 2022/01/21 05:25:48 by bozgur           ###   ########.fr       */
+/*   Updated: 2022/01/27 11:56:47 by bozgur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len;
 	char	*res;
 
+	if (!s1 || !s2)
+	{
+		if (!s1 && !s2)
+			return (ft_strdup(""));
+		if (!s1)
+			return (ft_strdup(s2));
+		else if (!s2)
+			return (ft_strdup(s1));
+	}
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	res = (char *)ft_calloc(len, sizeof(char));
 	if (!res)

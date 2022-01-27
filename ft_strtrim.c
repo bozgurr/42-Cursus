@@ -6,7 +6,7 @@
 /*   By: bozgur <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 04:08:48 by bozgur            #+#    #+#             */
-/*   Updated: 2022/01/21 04:08:51 by bozgur           ###   ########.fr       */
+/*   Updated: 2022/01/27 15:22:25 by bozgur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ char	*ft_strtrim(char const *s1, const char	*set)
 	size_t	start;
 	size_t	len;
 
+	if (!s1)
+		return (0);
+	if (!set)
+		return ((char *)s1);
 	start = 0;
 	len = ft_strlen(s1) - 1;
 	while (s1[start] && ft_strchr(set, s1[start]))

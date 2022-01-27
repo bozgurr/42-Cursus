@@ -6,7 +6,7 @@
 /*   By: bozgur <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 06:18:38 by bozgur            #+#    #+#             */
-/*   Updated: 2022/01/24 06:21:32 by bozgur           ###   ########.fr       */
+/*   Updated: 2022/01/27 12:02:42 by bozgur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		index;
 
 	index = 0;
+	if (!s || !f)
+		return (0);
 	new = ft_strdup(s);
+	if (!new)
+		return (0);
 	while (*s)
 	{
 		new[index] = f(index, *s++);

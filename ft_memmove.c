@@ -6,7 +6,7 @@
 /*   By: bozgur <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 01:17:11 by bozgur            #+#    #+#             */
-/*   Updated: 2022/01/12 02:56:23 by bozgur           ###   ########.fr       */
+/*   Updated: 2022/01/27 15:07:44 by bozgur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	dst_1 = (char *)dst;
 	src_1 = (const char *)src;
+	if (!dst && !src)
+		return (0);
 	if (dst < src)
 		dst = ft_memcpy(dst, src, len);
 	else

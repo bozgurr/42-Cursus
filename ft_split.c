@@ -6,7 +6,7 @@
 /*   By: bozgur <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 02:50:41 by bozgur            #+#    #+#             */
-/*   Updated: 2022/01/23 08:26:51 by bozgur           ###   ########.fr       */
+/*   Updated: 2022/01/26 23:53:57 by bozgur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,3 @@ char	**ft_split(char const *s, char c)
 		*result = (char *) !sizeof(char *);
 	return (head);
 }
-
-/*
-int	main ()//				              i
-{//					
-	char	**res;         w
-				           s
-	res = ft_split("__ozgur_bilal__arbi_elmas_1999_", '_');
-	for (int i = 0; res[i]; i++)
-		printf("%s, ", res[i]);
-	return (0);
-}*/

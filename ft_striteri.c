@@ -6,7 +6,7 @@
 /*   By: bozgur <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 07:06:11 by bozgur            #+#    #+#             */
-/*   Updated: 2022/01/24 07:06:14 by bozgur           ###   ########.fr       */
+/*   Updated: 2022/01/27 12:05:10 by bozgur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int		index;
 
+	if (!s || !f)
+		return ;
 	index = 0;
 	while (s[index])
 	{
